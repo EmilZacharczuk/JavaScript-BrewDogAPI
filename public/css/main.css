@@ -1,4 +1,9 @@
 .beer-image {
   height: 100px;
   width: auto;
-}
+};
+
+#beers-list {
+
+  display: grid;
+};
