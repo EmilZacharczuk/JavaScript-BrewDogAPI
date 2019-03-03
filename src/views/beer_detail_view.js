@@ -10,6 +10,12 @@ BeerDetailView.prototype.createBeerDetail = function (beer) {
   name.textContent = beer.name;
   beerDetail.appendChild(name);
 
+  const beerImage = document.createElement('img')
+  beerImage.classList.add('beer-image');
+  beerImage.src = beer.image_url;
+  beerDetail.appendChild(beerImage);
+
+
   const detailsList = document.createElement('ul')
 
   const description = this.createDetailListItem('Description', beer.description);
@@ -18,10 +24,6 @@ BeerDetailView.prototype.createBeerDetail = function (beer) {
   const foodPairing = this.createDetailListItem('Food Pairing', beer.food_pairing);
   detailsList.appendChild(foodPairing);
 
-  const beerImage = document.createElement('img')
-  beerImage.classList.add('beer-image');
-  beerImage.src = beer.image_url;
-  beerDetail.appendChild(beerImage);
 
   beerDetail.appendChild(detailsList);
   return beerDetail;
