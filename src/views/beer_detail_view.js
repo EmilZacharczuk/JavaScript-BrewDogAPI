@@ -15,6 +15,14 @@ BeerDetailView.prototype.createBeerDetail = function (beer) {
   const description = this.createDetailListItem('Description', beer.description);
   detailsList.appendChild(description);
 
+  const foodPairing = this.createDetailListItem('Food Pairing', beer.food_pairing);
+  detailsList.appendChild(foodPairing);
+
+  const beerImage = document.createElement('img')
+  beerImage.classList.add('beer-image');
+  beerImage.src = beer.image_url;
+  beerDetail.appendChild(beerImage);
+
   beerDetail.appendChild(detailsList);
   return beerDetail;
 };
@@ -24,4 +32,6 @@ BeerDetailView.prototype.createDetailListItem = function (label, property) {;
   element.textContent = `${label}: ${property}`;
   return element
 };
+
+
 module.exports = BeerDetailView;
